@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CV Demo Template</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            line-height: 1.6;
+            background: #f8f8f8;
+        }
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            max-width: 700px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.08);
+        }
+        h1 {
+            margin-bottom: 5px;
+        }
+        h2 {
+            margin-top: 25px;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 4px;
+            font-size: 18px;
+        }
+        p {
+            margin: 8px 0;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>{{ name }}</h1>
+    <p><strong>{{ title }}</strong></p>
+
+    <h2>Professional Summary</h2>
+    <p>{{ summary }}</p>
+
+    <h2>Skills</h2>
+    <ul>
+        <li>Example Skill A</li>
+        <li>Example Skill B</li>
+        <li>Example Skill C</li>
+    </ul>
+
+    <h2>Experience</h2>
+    <p>{{ experience }}</p>
+
+    <h2>Education</h2>
+    <p>{{ education }}</p>
+
+    <h2>Contact</h2>
+    <p>Email: {{ email }}</p>
+    <p>Phone: {{ phone }}</p>
+</div>
+
+</body>
+</html>
