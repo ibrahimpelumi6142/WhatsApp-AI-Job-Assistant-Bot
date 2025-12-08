@@ -1,0 +1,34 @@
+[
+  {
+    "code": "portsmouth",
+    "name": "University of Portsmouth",
+    "city": "Portsmouth",
+    "region": "England",
+    "international_fee_band": "medium",
+    "entry_paths": {
+      "waec": true,
+      "neco": true,
+      "olevel": true,
+      "gcse": true,
+      "alevel": true,
+      "btec": true,
+      "ond": true,
+      "hnd": "case_by_case",
+      "foundation": true,
+      "bachelors": true,
+      "masters": true
+    },
+    "courses": [
+      { "name": "Computer Science", "category": "Computing", "level": ["bachelor", "masters"] },
+      { "name": "Cybersecurity", "category": "Computing", "level": ["bachelor", "masters"] },
+      { "name": "Software Engineering", "category": "Computing", "level": ["bachelor"] },
+      { "name": "Data Science", "category": "Computing", "level": ["masters"] },
+      { "name": "Business Management", "category": "Business", "level": ["bachelor", "masters"] },
+      { "name": "Accounting and Finance", "category": "Business", "level": ["bachelor"] },
+      { "name": "Marketing", "category": "Business", "level": ["bachelor"] },
+      { "name": "Mechanical Engineering", "category": "Engineering", "level": ["bachelor"] },
+      { "name": "Nursing", "category": "Health", "level": ["bachelor"] }
+    ],
+    "notes": "Strong in computing, business and health courses. Popular with international students."
+  }
+]
