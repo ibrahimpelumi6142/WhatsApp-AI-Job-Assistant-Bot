@@ -48,7 +48,9 @@ worqnow-demo/
 ├── main.py               # Full demo logic (single file)
 ├── README.md             # Project documentation
 ├── .env.example          # Demo verify token
-│
+├── module
+|   └── university-advisor # Various university details for students that want to study more
+|
 ├── sample_payloads/
 │   ├── incoming_message.json
 │   └── status_update.json
