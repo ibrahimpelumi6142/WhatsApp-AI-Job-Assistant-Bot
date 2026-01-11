@@ -1,1 +1,21 @@
-
+[
+  {
+    "university_code": "portsmouth",
+    "scholarships": [
+      {
+        "name": "Vice-Chancellor's Global Scholarship",
+        "type": "merit",
+        "value": "£5,000",
+        "eligibility": "High academic performance; international student status.",
+        "notes": "Competitive; limited slots."
+      },
+      {
+        "name": "Automatic International Scholarship",
+        "type": "automatic",
+        "value": "£1,600",
+        "eligibility": "All self-funded international students.",
+        "notes": "Automatically applied at offer stage."
+      }
+    ]
+  }
+]
