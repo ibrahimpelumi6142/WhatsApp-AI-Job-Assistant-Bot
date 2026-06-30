@@ -1,62 +1,40 @@
-# 📱 WorqNow – WhatsApp AI Job Assistant (Public Demo)
+# 📱 WorqNow – WhatsApp AI Job Assistant (Open Source)
 
-A clean **public demo** of a WhatsApp-based AI Job Assistant built using **FastAPI**.  
-This demo showcases:
-
-- WhatsApp webhook handling  
-- Intent recognition  
-- Job search example (mocked)  
-- CV builder example (mocked)  
-- Structured conversation flow  
-- Clean single-file architecture  
-
-⚠️ **NOTE:**  
-This is a **safe demo version**. The real production WorqNow bot contains:
-
-- Real job APIs (Remotive / JSearch)  
-- MongoDB user storage  
-- PDF CV generator  
-- WhatsApp media uploads  
-- Daily alerts scheduler  
-- Advanced NLU + fuzzy matching  
-- Onboarding & subscription engine  
-- User preference tracking  
-- Business logic  
-
-Those features are **intentionally removed** from this public demo.
+A **fully working** WhatsApp-based AI Job Assistant built with **FastAPI**.  
+Clone it, add your WhatsApp credentials, and it works instantly — with **real job results**.
 
 ---
 
-## ✨ Features (Demo Version)
+## ✨ Features
 
-- 🔗 WhatsApp Webhook Receiver  
-- 🧠 Simple Intent Detection  
-- 🔍 Mock Job Search Flow  
-- 📝 Mock CV Builder (Q&A Flow)  
-- 💬 Typing Indicator (simulated)  
-- 🗂 Clean Structure  
-- ⚡ FastAPI Backend  
-- 🛡 Safe and GitHub-friendly  
+- 🔗 WhatsApp Webhook Handler  
+- 🧠 Fuzzy Intent Recognition (fuzzywuzzy)  
+- 🔍 Real Job Search via WorqNow API (free, no key required)  
+- 📝 CV Builder (Q&A flow, text output)  
+- 👋 Onboarding Flow (location setup)  
+- 💬 Typing Indicator simulation  
+- 💡 Career Tips  
+- 📚 Learning Resources  
+- 💬 Feedback Collection  
+- ⚡ FastAPI Backend — single file, clean structure  
 
 ---
 
 ## 🗂 Project Structure
 
 ```
-worqnow-demo/
+worqnow-whatsapp-bot/
 │
-├── main.py               # Full demo logic (single file)
-├── README.md             # Project documentation
-├── .env.example          # Demo verify token
-├── module/
-|   └── university-advisor # Various university details for students that want to study more
-|
-├── sample_payloads/
-│   ├── incoming_message.json
-│   └── status_update.json
+├── main.py               # Full bot logic (single file)
+├── requirements.txt      # Dependencies
+├── .env.example          # Environment variable template
+├── README.md             # Documentation
+│
+├── modules/
+│   └── university_advisor/  # University info for students
 │
 └── templates/
-    └── cv_demo.html      # Minimal CV layout (demo)
+    └── cv_demo.html         # Sample CV layout
 ```
 
 ---
@@ -66,61 +44,55 @@ worqnow-demo/
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/worqnow-demo
-cd worqnow-demo
+git clone https://github.com/ibrahimpelumi6142/WhatsApp-AI-Job-Assistant-Bot
+cd WhatsApp-AI-Job-Assistant-Bot
 ```
 
 ### 2️⃣ Install Dependencies
 
 ```bash
-pip install fastapi uvicorn python-multipart
+pip install -r requirements.txt
 ```
 
-*(No databases or external APIs needed for this demo.)*
-
----
-
-## 🔧 Environment Setup
-
-Create your `.env` file:
+### 3️⃣ Set Up Environment
 
 ```bash
 cp .env.example .env
 ```
 
-`.env` content:
+Fill in your `.env`:
 
 ```
-VERIFY_TOKEN=DEMO_TOKEN
+VERIFY_TOKEN=your_webhook_verify_token
+ACCESS_TOKEN=your_whatsapp_access_token
+PHONE_NUMBER_ID=your_phone_number_id
+WORQNOW_API_URL=https://api.worqnow.ai
 ```
 
-Used only for webhook verification.
+> Get your WhatsApp credentials from [Meta for Developers](https://developers.facebook.com/apps/)
 
----
-
-## ▶️ Run the Server
+### 4️⃣ Run the Server
 
 ```bash
 uvicorn main:app --reload --port=8000
 ```
 
-Visit:
+### 5️⃣ Expose with ngrok (for WhatsApp webhook)
 
-```
-http://localhost:8000/webhook?hub.verify_token=DEMO_TOKEN&hub.challenge=123
+```bash
+ngrok http 8000
 ```
 
-If everything works, you’ll see:
-
+Set your webhook URL in Meta dashboard to:
 ```
-123
+https://your-ngrok-url.ngrok.io/webhook
 ```
 
 ---
 
-## 🧪 Testing Incoming Messages
+## 🧪 Test Without WhatsApp
 
-Send this JSON using Postman/curl:
+Send a POST request via Postman or curl:
 
 ```json
 {
@@ -128,7 +100,8 @@ Send this JSON using Postman/curl:
     "changes": [{
       "value": {
         "messages": [{
-          "from": "234801000000",
+          "from": "2348010000000",
+          "id": "msg_001",
           "text": { "body": "search frontend jobs" }
         }]
       }
@@ -137,45 +110,45 @@ Send this JSON using Postman/curl:
 }
 ```
 
-Your terminal will print the simulated job results.
+Without WhatsApp credentials set, responses print to terminal automatically.
 
 ---
 
-## 🎯 Supported Demo Commands
+## 🎯 Supported Commands
 
 | Command | What It Does |
-|--------|-----------------------------|
-| **search UI/UX** | Returns mock job listings |
-| **create cv** | Starts CV builder demo |
-| **profile** | Shows demo profile |
-| **help** | Shows available demo commands |
-| **feedback** | Records mock feedback |
+|---|---|
+| **JOBS** | Browse jobs based on your location |
+| **Search frontend** | Search real jobs by keyword |
+| **Build my CV** | Start the CV builder flow |
+| **Set location Lagos** | Update your job location |
+| **Profile** | View your saved preferences |
+| **Learn** | Free learning resources |
+| **Tips** | Get a career tip |
+| **Feedback** | Send feedback |
+| **Help** | See all commands |
 
 ---
 
-## 🧩 Additional Demo Files
+## 🌐 WorqNow Job API
 
-### `templates/cv_demo.html`  
-A minimal HTML CV layout (demo only).
+This bot uses the **WorqNow Job Search API** — free for developers, no API key required.
 
-### `sample_payloads/`  
-Realistic WhatsApp payloads for learning how Webhooks work.
+```
+https://api.worqnow.ai/api/v1/search?query=frontend+jobs
+```
 
 ---
 
-## 🏆 Purpose of This Demo
+## 🏆 About WorqNow
 
-This repository is designed to:
+WorqNow is an AI-powered job assistant delivered via WhatsApp.  
+This open-source version is a working foundation — the production app includes additional features kept private.
 
-- Demonstrate WhatsApp automation with FastAPI  
-- Serve as a **safe open-source portfolio project**  
-- Show my architecture skills  
-- Help others learn how WhatsApp Cloud API works  
-
-The real production WorqNow bot remains private.
+🌍 Visit [worqnow.ai](https://worqnow.ai) for the full experience.
 
 ---
 
 ## 📝 License
 
-MIT License — free to use, modify, and learn from.
+MIT License — free to use, modify, and build on.
