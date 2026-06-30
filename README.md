@@ -1,7 +1,7 @@
 # 📱 WorqNow – WhatsApp AI Job Assistant (Open Source)
 
 A **fully working** WhatsApp-based AI Job Assistant built with **FastAPI**.  
-Clone it, add your WhatsApp credentials, and it works instantly — with **real job results**.
+Clone it, add your WhatsApp credentials, and it works instantly - with **real job results**.
 
 ---
 
@@ -16,7 +16,7 @@ Clone it, add your WhatsApp credentials, and it works instantly — with **real 
 - 💡 Career Tips  
 - 📚 Learning Resources  
 - 💬 Feedback Collection  
-- ⚡ FastAPI Backend — single file, clean structure  
+- ⚡ FastAPI Backend - single file, clean structure  
 
 ---
 
@@ -132,7 +132,7 @@ Without WhatsApp credentials set, responses print to terminal automatically.
 
 ## 🌐 WorqNow Job API
 
-This bot uses the **WorqNow Job Search API** — free for developers, no API key required.
+This bot uses the **WorqNow Job Search API** - free for developers, no API key required.
 
 ```
 https://api.worqnow.ai/api/v1/search?query=frontend+jobs
@@ -143,7 +143,7 @@ https://api.worqnow.ai/api/v1/search?query=frontend+jobs
 ## 🏆 About WorqNow
 
 WorqNow is an AI-powered job assistant delivered via WhatsApp.  
-This open-source version is a working foundation — the production app includes additional features kept private.
+This open-source version is a working foundation - the production app includes additional features kept private.
 
 🌍 Visit [worqnow.ai](https://worqnow.ai) for the full experience.
 
@@ -151,4 +151,4 @@ This open-source version is a working foundation — the production app includes
 
 ## 📝 License
 
-MIT License — free to use, modify, and build on.
+MIT License - free to use, modify, and build on.
